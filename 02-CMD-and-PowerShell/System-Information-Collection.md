@@ -13,19 +13,18 @@
 | 4 | List running processes. | Completed | Used `Get-Process`; the output can be compared with Task Manager. |
 | 5 | Identify the five processes using the most memory. | Completed | Sorted by `WorkingSet64`; values were converted from bytes to MiB. The result is recorded in `PowerShell-Commands.md`. |
 | 6 | List running Windows services. | Completed | Filtered `Get-Service` to `Status -eq 'Running'`. The screenshot captures the beginning of the results. |
-| 7 | Identify listening TCP connections. | Not yet completed | Use `Get-NetTCPConnection -State Listen`. |
+| 7 | Identify listening TCP connections. | Completed | `Get-NetTCPConnection -State Listen` returned four rows using `127.0.0.1` for local and remote addresses. The reported state was `Listen`; `OwningProcess` was `0`, so this output did not identify an application. Port values are omitted from public evidence. |
 | 8 | Find local user accounts. | Not yet completed | Use `Get-LocalUser`. |
 
-## Commands for the remaining checks
+## Remaining assignment
 
-Use these in PowerShell when ready:
+Use this in PowerShell when ready:
 
 ```powershell
-Get-NetTCPConnection -State Listen
 Get-LocalUser
 ```
 
-These commands only retrieve information. Review the output before sharing screenshots, and cover account names, device identifiers, IP addresses, and other private details.
+This command only retrieves information. Review the output before sharing screenshots, and cover account names, device identifiers, IP addresses, and other private details.
 
 ## Evidence
 
@@ -35,4 +34,4 @@ These commands only retrieve information. Review the output before sharing scree
 - Full service list: [PowerShell services](evidence/powershell-services-redacted.png)
 - Network adapters: [PowerShell network addresses](evidence/powershell-network-addresses-redacted.png)
 - System information: [PowerShell computer information](evidence/powershell-computer-info-redacted.png)
-
+- Listening TCP connections: [PowerShell TCP listeners](evidence/powershell-tcp-listeners-redacted.png)

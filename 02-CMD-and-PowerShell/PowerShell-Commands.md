@@ -14,7 +14,7 @@
 | `Get-NetIPAddress` | IP address details for network interfaces. | The output included Wi-Fi, loopback, virtual VMware adapters, Bluetooth, and other interfaces, with IPv4 and IPv6 records. Exact addresses are redacted. |
 | `Get-ComputerInfo` | Computer, operating system, and firmware information. | The output contains many system details. The registered owner and Windows Product ID are redacted in the shared screenshot. |
 | `Get-LocalUser` | Local user accounts. | Not yet practised. |
-| `Get-NetTCPConnection` | TCP connections and their states. | Not yet practised. |
+| `Get-NetTCPConnection` | TCP connections and their states. | Filtered for `Listen`; four loopback rows appeared. `OwningProcess` showed `0`, so this output did not identify an application. Port values are redacted in the shared screenshot. |
 | `Get-WinEvent` | Windows event log records. | Not yet practised. |
 | `Get-EventLog` | Entries from supported event logs. | Not yet practised. |
 
@@ -54,6 +54,10 @@ The screenshots below show actual PowerShell output. Identifying values have bee
 
 ![Redacted running services output](evidence/powershell-running-services-redacted.png)
 
+### Listening TCP connections
+
+![Redacted listening TCP connection output](evidence/powershell-tcp-listeners-redacted.png)
+
 ### Full service list
 
 ![Redacted Get-Service output](evidence/powershell-services-redacted.png)
@@ -65,4 +69,3 @@ The screenshots below show actual PowerShell output. Identifying values have bee
 ### Computer information
 
 ![Redacted Get-ComputerInfo output](evidence/powershell-computer-info-redacted.png)
-

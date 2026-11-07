@@ -14,17 +14,9 @@
 | 5 | Identify the five processes using the most memory. | Completed | Sorted by `WorkingSet64`; values were converted from bytes to MiB. The result is recorded in `PowerShell-Commands.md`. |
 | 6 | List running Windows services. | Completed | Filtered `Get-Service` to `Status -eq 'Running'`. The screenshot captures the beginning of the results. |
 | 7 | Identify listening TCP connections. | Completed | `Get-NetTCPConnection -State Listen` returned four rows using `127.0.0.1` for local and remote addresses, all in the `Listen` state. Port values are omitted from public evidence. |
-| 8 | Find local user accounts. | Not yet completed | Use `Get-LocalUser`. |
+| 8 | Find local user accounts. | Completed | `Get-LocalUser` listed eight accounts and showed their enabled status. Personal and app-specific account names are redacted in the shared evidence. |
 
-## Remaining assignment
-
-Use this in PowerShell when ready:
-
-```powershell
-Get-LocalUser
-```
-
-This command only retrieves information. Review the output before sharing screenshots, and cover account names, device identifiers, IP addresses, and other private details.
+All eight system-information assignments are complete. The command only retrieves information. Account names, device identifiers, IP addresses, and other private details have been covered in shared evidence where appropriate.
 
 ## Evidence
 
@@ -35,3 +27,4 @@ This command only retrieves information. Review the output before sharing screen
 - Network adapters: [PowerShell network addresses](evidence/powershell-network-addresses-redacted.png)
 - System information: [PowerShell computer information](evidence/powershell-computer-info-redacted.png)
 - Listening TCP connections: [PowerShell TCP listeners](evidence/powershell-tcp-listeners-simple-redacted.jpg)
+- Local user accounts: [PowerShell local users](evidence/powershell-local-users-redacted.jpg)

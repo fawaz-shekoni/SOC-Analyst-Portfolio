@@ -13,7 +13,7 @@
 | `Get-Service` | Windows services and their current states. | Used `Get-Service | Where-Object Status -eq 'Running'` to list running services only. The screenshot shows the beginning of the results; the list continues beyond the visible area. |
 | `Get-NetIPAddress` | IP address details for network interfaces. | The output included Wi-Fi, loopback, virtual VMware adapters, Bluetooth, and other interfaces, with IPv4 and IPv6 records. Exact addresses are redacted. |
 | `Get-ComputerInfo` | Computer, operating system, and firmware information. | The output contains many system details. The registered owner and Windows Product ID are redacted in the shared screenshot. |
-| `Get-LocalUser` | Local user accounts. | Not yet practised. |
+| `Get-LocalUser` | Local user accounts and whether each account is enabled. | Listed eight accounts. Personal and app-specific account names are redacted in the shared screenshot. |
 | `Get-NetTCPConnection` | TCP connections and their states. | `-State Listen` returned four rows using `127.0.0.1` for the local and remote addresses. Port values are redacted in the shared screenshot. |
 | `Get-WinEvent` | Windows event log records. | Not yet practised. |
 | `Get-EventLog` | Entries from supported event logs. | Not yet practised. |
@@ -48,6 +48,16 @@ Get-NetTCPConnection -State Listen
 
 The output showed four rows in the `Listen` state using `127.0.0.1` for both addresses. Port values are covered in the public screenshot.
 
+## Local user accounts
+
+Command used:
+
+```powershell
+Get-LocalUser
+```
+
+The output listed eight local accounts and showed whether each was enabled. Personal and app-specific account names are redacted in the shared screenshot.
+
 ## Evidence
 
 The screenshots below show actual PowerShell output. Identifying values have been covered in the shared copies.
@@ -67,6 +77,10 @@ The screenshots below show actual PowerShell output. Identifying values have bee
 ### Listening TCP connections
 
 ![Redacted listening TCP connection output](evidence/powershell-tcp-listeners-simple-redacted.jpg)
+
+### Local user accounts
+
+![Redacted local user account output](evidence/powershell-local-users-redacted.jpg)
 
 ### Full service list
 

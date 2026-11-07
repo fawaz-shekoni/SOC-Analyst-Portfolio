@@ -69,6 +69,6 @@ This module is organized as `02-CMD-and-PowerShell/` and includes:
 
 ## Progress so far
 
-The first seven system-information assignments are complete. The local-user check remains. CMD practice has not started.
+All eight system-information assignments are complete. CMD practice has not started.
 
 Screenshots in this folder have identifying values such as the user name, computer name, local IP addresses, process IDs, and Windows Product ID covered before publication.

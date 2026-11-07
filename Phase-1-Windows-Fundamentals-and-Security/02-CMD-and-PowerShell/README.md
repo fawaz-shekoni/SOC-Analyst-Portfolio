@@ -69,6 +69,6 @@ This module is organized as `02-CMD-and-PowerShell/` and includes:
 
 ## Progress so far
 
-All eight system-information assignments are complete. CMD practice has started: `hostname`, `whoami`, `ipconfig`, `systeminfo`, `tasklist`, `net user`, and `netstat -ano` are recorded in `CMD-Commands.md`; only `dir` remains from the CMD command list.
+All eight system-information assignments and all eight CMD command practices are complete. The PowerShell event log commands `Get-WinEvent` and `Get-EventLog` have not yet been practised.
 
-Screenshots in this folder have identifying values such as the user name, computer name, local IP addresses, process IDs, and Windows Product ID covered before publication.
+Screenshots are reviewed individually; account and computer names are masked where appropriate. Other technical values remain visible when useful to the exercise.

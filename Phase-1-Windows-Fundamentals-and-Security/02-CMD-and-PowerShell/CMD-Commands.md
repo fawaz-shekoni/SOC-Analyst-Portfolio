@@ -1,7 +1,7 @@
 # CMD Commands
 
 **Module:** 2 — CMD and PowerShell  
-**Status:** Practised `hostname`, `whoami`, `ipconfig`, `systeminfo`, `tasklist`, `net user`, and `netstat -ano`. Only `dir` remains to be practised.
+**Status:** All eight CMD commands in this list have been practised.
 
 | Command | Purpose | Practice status |
 |---|---|---|
@@ -12,7 +12,7 @@
 | `net user` | Lists local user accounts on the computer. | Practised. The output listed eight accounts and confirmed the command completed successfully. Account and computer names are redacted in the shared screenshot. |
 | `hostname` | Displays the computer name. | Practised. The computer name is redacted. |
 | `netstat -ano` | Displays TCP connections, listening ports, numeric addresses/ports, and associated process IDs. | Practised. The visible snapshot contains `LISTENING`, `ESTABLISHED`, `CLOSE_WAIT`, `FIN_WAIT_1`, and `CLOSED` states. Addresses, ports, states, and PIDs remain visible; only the account name in the prompt is masked. |
-| `dir` | Lists files and folders in the current directory. | To practise |
+| `dir` | Lists files and folders in the current directory. | Practised. The output shows directory entries marked `<DIR>` and file entries with sizes and modified dates. The screenshot is a partial view of the current directory listing. |
 
 ## Notes
 
@@ -45,3 +45,8 @@ The output is a snapshot, and connection states change as programs communicate. 
 
 Reference: [Microsoft Learn: `netstat`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/netstat).
 
+## `dir`
+
+`dir` displayed the names, types, sizes, and modified dates of entries in the current directory. `<DIR>` marks directories. This is a partial view; the listing continues below the visible area.
+
+![Directory listing with only the account name in the path masked](evidence/cmd-dir-minimal-redaction.jpg)

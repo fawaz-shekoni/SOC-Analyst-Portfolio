@@ -19,4 +19,4 @@ This phase groups the Windows fundamentals and command-line modules together.
 
 ## Progress
 
-Module 1 notes and evidence are included. The eight PowerShell system-information assignments in Module 2 are complete. CMD practice is in progress; only `dir` remains from the command list.
+Module 1 notes and evidence are included. All eight practical system-information assignments and all eight CMD command practices in Module 2 are complete. The PowerShell event-log commands `Get-WinEvent` and `Get-EventLog` remain unpractised.

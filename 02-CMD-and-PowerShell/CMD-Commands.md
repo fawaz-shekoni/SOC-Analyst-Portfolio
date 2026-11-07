@@ -11,7 +11,7 @@
 | `tasklist` | Lists running processes with process name, PID, session, and memory use. | Practised. The visible rows included Windows processes such as `System`, `Registry`, `services.exe`, and multiple `svchost.exe` entries. PIDs are redacted; process and memory values are a snapshot. |
 | `net user` | Lists local user accounts on the computer. | Practised. The output listed eight accounts and confirmed the command completed successfully. Account and computer names are redacted in the shared screenshot. |
 | `hostname` | Displays the computer name. | Practised. The computer name is redacted. |
-| `netstat -ano` | Displays network connections/listeners and associated process IDs. | To practise |
+| `netstat -ano` | Displays TCP connections, listening ports, numeric addresses/ports, and associated process IDs. | Practised. The visible snapshot contains `LISTENING`, `ESTABLISHED`, `CLOSE_WAIT`, `FIN_WAIT_1`, and `CLOSED` states. IP addresses are masked in the screenshot; port numbers and PIDs remain visible. |
 | `dir` | Lists files and folders in the current directory. | To practise |
 
 ## Notes
@@ -32,3 +32,15 @@ The account name, computer name, and visible IP addresses have been redacted.
 
 ![Net user output with account and computer names redacted](evidence/cmd-net-user-minimal-redaction.jpg)
 
+## `netstat -ano`
+
+- `-a` includes active connections and listening ports.
+- `-n` keeps addresses and port numbers numeric.
+- `-o` includes the process ID (PID) associated with each connection.
+- `Proto` is the protocol; `Local Address` and `Foreign Address` are the local and remote endpoints; `State` is the TCP connection state; `PID` identifies the associated process.
+
+The output is a snapshot, and connection states change as programs communicate. The screenshot keeps the ports, states, and PIDs visible while masking IP addresses and the account name in the prompt.
+
+![Netstat output with only IP addresses and the account name masked](evidence/cmd-netstat-minimal-redaction.jpg)
+
+Reference: [Microsoft Learn: `netstat`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/netstat).

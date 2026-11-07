@@ -15,7 +15,7 @@
 | `Get-ComputerInfo` | Computer, operating system, and firmware information. | The output contains many system details. The registered owner and Windows Product ID are redacted in the shared screenshot. |
 | `Get-LocalUser` | Local user accounts and whether each account is enabled. | Listed eight accounts. Personal and app-specific account names are redacted in the shared screenshot. |
 | `Get-NetTCPConnection` | TCP connections and their states. | `-State Listen` returned four rows using `127.0.0.1` for the local and remote addresses. Port values are redacted in the shared screenshot. |
-| `Get-WinEvent` | Windows event log records. | Not yet practised. |
+| `Get-WinEvent` | Windows event log records, including records from modern Windows event logs. | Practised in two forms: the default event view and a `Select-Object` pipeline that shows chosen fields. |
 | `Get-EventLog` | Entries from classic Windows event logs. | Practised with `Get-EventLog -LogName System -Newest 10`. The output showed the newest 10 System log entries, including `Warning` and `Information` types. Several messages reported an unrecognized USB driver; this observation alone does not identify a cause. |
 
 ## Top five processes by memory
@@ -58,7 +58,31 @@ Get-LocalUser
 
 The output listed eight local accounts and showed whether each was enabled. Personal and app-specific account names are redacted in the shared screenshot.
 
-## System event log
+## Windows event log with `Get-WinEvent`
+
+`Get-WinEvent` was practised in two forms. Both retrieve the 10 newest records from the System log; the second command selects a concise set of fields.
+
+### Full event view
+
+```powershell
+Get-WinEvent -LogName System -MaxEvents 10
+```
+
+This default view displays provider groupings and event details, including the message text. The captured output included a DistributedCOM warning, `hcmon` warnings describing an unrecognized USB driver, and Service Control Manager information events.
+
+### Selected event fields
+
+```powershell
+Get-WinEvent -LogName System -MaxEvents 10 | Select-Object TimeCreated, Id, LevelDisplayName, ProviderName
+```
+
+The pipeline keeps the date/time, event ID, level, and provider name, making the results shorter and easier to scan. It omits the message text shown in the full view.
+
+These entries are observations from one System log snapshot. The messages by themselves do not establish a cause or indicate whether action is required.
+
+## System event log with `Get-EventLog`
+
+`Get-EventLog` is a separate command used here to query a classic Windows event log. The two commands both show event records, but they use different command interfaces.
 
 Command used:
 
@@ -92,9 +116,17 @@ The screenshots below show actual PowerShell output. Identifying values have bee
 
 ![Redacted local user account output](evidence/powershell-local-users-redacted.jpg)
 
-### System event log
+### `Get-WinEvent`: full event view
 
-![System event log output with only the account name in the prompt masked](evidence/powershell-get-eventlog-minimal-redaction.jpg)
+![Get-WinEvent full event output; only the account name in the prompt is masked](evidence/powershell-get-winevent-full-minimal-redaction.jpg)
+
+### `Get-WinEvent`: selected fields
+
+![Get-WinEvent selected fields output; only the account name in the prompt is masked](evidence/powershell-get-winevent-selected-fields-minimal-redaction.jpg)
+
+### `Get-EventLog`: classic System log query
+
+![Get-EventLog System output; only the account name in the prompt is masked](evidence/powershell-get-eventlog-minimal-redaction.jpg)
 
 ### Full service list
 

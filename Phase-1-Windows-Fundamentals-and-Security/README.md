@@ -19,4 +19,4 @@ This phase groups the Windows fundamentals and command-line modules together.
 
 ## Progress
 
-Module 1 notes and evidence are included. All eight practical system-information assignments and all eight CMD command practices in Module 2 are complete. `Get-EventLog` has been practised; `Get-WinEvent` remains to be tried.
+Module 1 notes and evidence are included. All eight practical system-information assignments and all eight CMD command practices in Module 2 are complete. Both `Get-EventLog` and `Get-WinEvent` have been practised and documented in Module 2.

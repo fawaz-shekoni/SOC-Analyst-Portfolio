@@ -69,6 +69,6 @@ This module is organized as `02-CMD-and-PowerShell/` and includes:
 
 ## Progress so far
 
-All eight system-information assignments and all eight CMD command practices are complete. `Get-EventLog` has been practised; `Get-WinEvent` remains to be tried.
+All eight system-information assignments and all eight CMD command practices are complete. Both `Get-EventLog` and `Get-WinEvent` have been practised. The two `Get-WinEvent` forms and the `Get-EventLog` command are documented with screenshots.
 
 Screenshots are reviewed individually; account and computer names are masked where appropriate. Other technical values remain visible when useful to the exercise.

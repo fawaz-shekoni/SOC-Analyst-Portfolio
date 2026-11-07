@@ -12,7 +12,7 @@
 | 3 | Retrieve the IP address. | Completed | Used `Get-NetIPAddress`. The output contained multiple interfaces and address families; exact addresses are omitted. |
 | 4 | List running processes. | Completed | Used `Get-Process`; the output can be compared with Task Manager. |
 | 5 | Identify the five processes using the most memory. | Completed | Sorted by `WorkingSet64`; values were converted from bytes to MiB. The result is recorded in `PowerShell-Commands.md`. |
-| 6 | List running Windows services. | Partially completed | `Get-Service` listed all services and their states. The output has not yet been filtered to running services only. |
+| 6 | List running Windows services. | Completed | Filtered `Get-Service` to `Status -eq 'Running'`. The screenshot captures the beginning of the results. |
 | 7 | Identify listening TCP connections. | Not yet completed | Use `Get-NetTCPConnection -State Listen`. |
 | 8 | Find local user accounts. | Not yet completed | Use `Get-LocalUser`. |
 
@@ -21,7 +21,6 @@
 Use these in PowerShell when ready:
 
 ```powershell
-Get-Service | Where-Object Status -eq 'Running'
 Get-NetTCPConnection -State Listen
 Get-LocalUser
 ```
@@ -32,7 +31,8 @@ These commands only retrieve information. Review the output before sharing scree
 
 - Identity and process list: [PowerShell identity and processes](evidence/powershell-identity-and-processes-redacted.png)
 - Top five processes by memory: [PowerShell memory ranking](evidence/powershell-top-memory-processes-redacted.png)
-- Services: [PowerShell services](evidence/powershell-services-redacted.png)
+- Running services: [PowerShell running services](evidence/powershell-running-services-redacted.png)
+- Full service list: [PowerShell services](evidence/powershell-services-redacted.png)
 - Network adapters: [PowerShell network addresses](evidence/powershell-network-addresses-redacted.png)
 - System information: [PowerShell computer information](evidence/powershell-computer-info-redacted.png)
 

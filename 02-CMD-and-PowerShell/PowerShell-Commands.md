@@ -10,7 +10,7 @@
 | `whoami` | The current account identity. | Observed a `COMPUTER\USER`-style result. The exact value is redacted in the shared evidence. |
 | `hostname` | The computer's network name. | Returned the device name. The exact value is redacted in the shared evidence. |
 | `Get-Process` | Running processes and fields such as process name, process ID, CPU time, and memory. | Similar to Task Manager. One application can appear on multiple rows because it can run several processes. |
-| `Get-Service` | Windows services and their current states. | The output included both `Running` and `Stopped` services; it did not filter to running services only. |
+| `Get-Service` | Windows services and their current states. | Used `Get-Service | Where-Object Status -eq 'Running'` to list running services only. The screenshot shows the beginning of the results; the list continues beyond the visible area. |
 | `Get-NetIPAddress` | IP address details for network interfaces. | The output included Wi-Fi, loopback, virtual VMware adapters, Bluetooth, and other interfaces, with IPv4 and IPv6 records. Exact addresses are redacted. |
 | `Get-ComputerInfo` | Computer, operating system, and firmware information. | The output contains many system details. The registered owner and Windows Product ID are redacted in the shared screenshot. |
 | `Get-LocalUser` | Local user accounts. | Not yet practised. |
@@ -50,7 +50,11 @@ The screenshots below show actual PowerShell output. Identifying values have bee
 
 ![Redacted top memory processes output](evidence/powershell-top-memory-processes-redacted.png)
 
-### Service list
+### Running services
+
+![Redacted running services output](evidence/powershell-running-services-redacted.png)
+
+### Full service list
 
 ![Redacted Get-Service output](evidence/powershell-services-redacted.png)
 

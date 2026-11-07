@@ -69,7 +69,7 @@ This module is organized as `02-CMD-and-PowerShell/` and includes:
 
 ## Progress so far
 
-PowerShell output has been captured for `whoami`, `hostname`, `Get-Process`, `Get-Service`, `Get-NetIPAddress`, and `Get-ComputerInfo`. The first five system-information assignments are complete. The running-services filter, TCP listener check, and local-user check remain. CMD practice has not started.
+The first six system-information assignments are complete. The listening TCP connection check and local-user check remain. CMD practice has not started.
 
 Screenshots in this folder have identifying values such as the user name, computer name, local IP addresses, process IDs, and Windows Product ID covered before publication.
 

@@ -66,7 +66,7 @@ The screenshots below show actual PowerShell output. Identifying values have bee
 
 ### Listening TCP connections
 
-![Redacted listening TCP connection output](evidence/powershell-tcp-listeners-redacted.png)
+![Redacted listening TCP connection output](evidence/powershell-tcp-listeners-redacted.jpg)
 
 ### Full service list
 
@@ -79,4 +79,3 @@ The screenshots below show actual PowerShell output. Identifying values have bee
 ### Computer information
 
 ![Redacted Get-ComputerInfo output](evidence/powershell-computer-info-redacted.png)
-

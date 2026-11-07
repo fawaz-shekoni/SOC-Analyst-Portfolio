@@ -14,7 +14,7 @@
 | `Get-NetIPAddress` | IP address details for network interfaces. | The output included Wi-Fi, loopback, virtual VMware adapters, Bluetooth, and other interfaces, with IPv4 and IPv6 records. Exact addresses are redacted. |
 | `Get-ComputerInfo` | Computer, operating system, and firmware information. | The output contains many system details. The registered owner and Windows Product ID are redacted in the shared screenshot. |
 | `Get-LocalUser` | Local user accounts. | Not yet practised. |
-| `Get-NetTCPConnection` | TCP connections and their states. | Filtered for `Listen`; four loopback rows appeared. `OwningProcess` showed `0`, so this output did not identify an application. Port values are redacted in the shared screenshot. |
+| `Get-NetTCPConnection` | TCP connections and their states. | `-State Listen` returned four rows using `127.0.0.1` for the local and remote addresses. Port values are redacted in the shared screenshot. |
 | `Get-WinEvent` | Windows event log records. | Not yet practised. |
 | `Get-EventLog` | Entries from supported event logs. | Not yet practised. |
 
@@ -43,10 +43,10 @@ ChatGPT appears twice because the command lists individual processes; it does no
 Command used:
 
 ```powershell
-Get-NetTCPConnection -State Listen | Select-Object LocalAddress, LocalPort, RemoteAddress, RemotePort, State, OwningProcess | Format-Table -AutoSize
+Get-NetTCPConnection -State Listen
 ```
 
-The output showed four rows in the `Listen` state using `127.0.0.1` for both addresses. `OwningProcess` was `0`, so this result did not identify an application. Port values are covered in the public screenshot.
+The output showed four rows in the `Listen` state using `127.0.0.1` for both addresses. Port values are covered in the public screenshot.
 
 ## Evidence
 

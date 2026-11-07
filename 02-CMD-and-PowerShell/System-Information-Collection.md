@@ -13,7 +13,7 @@
 | 4 | List running processes. | Completed | Used `Get-Process`; the output can be compared with Task Manager. |
 | 5 | Identify the five processes using the most memory. | Completed | Sorted by `WorkingSet64`; values were converted from bytes to MiB. The result is recorded in `PowerShell-Commands.md`. |
 | 6 | List running Windows services. | Completed | Filtered `Get-Service` to `Status -eq 'Running'`. The screenshot captures the beginning of the results. |
-| 7 | Identify listening TCP connections. | Completed | `Get-NetTCPConnection -State Listen` returned four rows using `127.0.0.1` for local and remote addresses. The reported state was `Listen`; `OwningProcess` was `0`, so this output did not identify an application. Port values are omitted from public evidence. |
+| 7 | Identify listening TCP connections. | Completed | `Get-NetTCPConnection -State Listen` returned four rows using `127.0.0.1` for local and remote addresses, all in the `Listen` state. Port values are omitted from public evidence. |
 | 8 | Find local user accounts. | Not yet completed | Use `Get-LocalUser`. |
 
 ## Remaining assignment

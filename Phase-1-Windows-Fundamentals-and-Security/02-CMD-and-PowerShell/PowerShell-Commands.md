@@ -16,7 +16,7 @@
 | `Get-LocalUser` | Local user accounts and whether each account is enabled. | Listed eight accounts. Personal and app-specific account names are redacted in the shared screenshot. |
 | `Get-NetTCPConnection` | TCP connections and their states. | `-State Listen` returned four rows using `127.0.0.1` for the local and remote addresses. Port values are redacted in the shared screenshot. |
 | `Get-WinEvent` | Windows event log records. | Not yet practised. |
-| `Get-EventLog` | Entries from supported event logs. | Not yet practised. |
+| `Get-EventLog` | Entries from classic Windows event logs. | Practised with `Get-EventLog -LogName System -Newest 10`. The output showed the newest 10 System log entries, including `Warning` and `Information` types. Several messages reported an unrecognized USB driver; this observation alone does not identify a cause. |
 
 ## Top five processes by memory
 
@@ -58,6 +58,16 @@ Get-LocalUser
 
 The output listed eight local accounts and showed whether each was enabled. Personal and app-specific account names are redacted in the shared screenshot.
 
+## System event log
+
+Command used:
+
+```powershell
+Get-EventLog -LogName System -Newest 10
+```
+
+The result showed each event's index, time, entry type, source, instance ID, and message. Several recent entries were warnings from `hcmon` whose messages described an unrecognized USB driver. Other entries included a DCOM warning and Service Control Manager information events. The output records event reports; this screenshot alone does not determine whether the warnings need action.
+
 ## Evidence
 
 The screenshots below show actual PowerShell output. Identifying values have been covered in the shared copies.
@@ -81,6 +91,10 @@ The screenshots below show actual PowerShell output. Identifying values have bee
 ### Local user accounts
 
 ![Redacted local user account output](evidence/powershell-local-users-redacted.jpg)
+
+### System event log
+
+![System event log output with only the account name in the prompt masked](evidence/powershell-get-eventlog-minimal-redaction.jpg)
 
 ### Full service list
 

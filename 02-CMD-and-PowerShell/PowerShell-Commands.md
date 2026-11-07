@@ -38,6 +38,16 @@ Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 5 Proc
 
 ChatGPT appears twice because the command lists individual processes; it does not combine all processes belonging to the same app. Memory usage changes over time, so this is a snapshot.
 
+## Listening TCP connections
+
+Command used:
+
+```powershell
+Get-NetTCPConnection -State Listen | Select-Object LocalAddress, LocalPort, RemoteAddress, RemotePort, State, OwningProcess | Format-Table -AutoSize
+```
+
+The output showed four rows in the `Listen` state using `127.0.0.1` for both addresses. `OwningProcess` was `0`, so this result did not identify an application. Port values are covered in the public screenshot.
+
 ## Evidence
 
 The screenshots below show actual PowerShell output. Identifying values have been covered in the shared copies.
@@ -69,3 +79,4 @@ The screenshots below show actual PowerShell output. Identifying values have bee
 ### Computer information
 
 ![Redacted Get-ComputerInfo output](evidence/powershell-computer-info-redacted.png)
+

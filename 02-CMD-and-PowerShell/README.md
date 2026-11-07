@@ -69,6 +69,6 @@ This module is organized as `02-CMD-and-PowerShell/` and includes:
 
 ## Progress so far
 
-All eight system-information assignments are complete. CMD practice has started: `hostname`, `whoami`, and `ipconfig` are recorded in `CMD-Commands.md`; the other CMD commands remain to be practised.
+All eight system-information assignments are complete. CMD practice has started: `hostname`, `whoami`, `ipconfig`, and `systeminfo` are recorded in `CMD-Commands.md`; the remaining CMD commands are `tasklist`, `net user`, `netstat -ano`, and `dir`.
 
 Screenshots in this folder have identifying values such as the user name, computer name, local IP addresses, process IDs, and Windows Product ID covered before publication.

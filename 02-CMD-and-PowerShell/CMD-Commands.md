@@ -28,6 +28,7 @@ The account name, computer name, and visible IP addresses have been redacted.
 
 ![Redacted Command Prompt systeminfo output](evidence/cmd-systeminfo-redacted.jpg)
 
-![Redacted Command Prompt tasklist output](evidence/cmd-tasklist-redacted.jpg)
+![Tasklist output with only the account name redacted](evidence/cmd-tasklist-minimal-redaction.jpg)
 
 ![Redacted Command Prompt net user output](evidence/cmd-net-user-redacted.jpg)
+

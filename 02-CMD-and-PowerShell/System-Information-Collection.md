@@ -34,4 +34,4 @@ This command only retrieves information. Review the output before sharing screen
 - Full service list: [PowerShell services](evidence/powershell-services-redacted.png)
 - Network adapters: [PowerShell network addresses](evidence/powershell-network-addresses-redacted.png)
 - System information: [PowerShell computer information](evidence/powershell-computer-info-redacted.png)
-- Listening TCP connections: [PowerShell TCP listeners](evidence/powershell-tcp-listeners-redacted.jpg)
+- Listening TCP connections: [PowerShell TCP listeners](evidence/powershell-tcp-listeners-simple-redacted.jpg)

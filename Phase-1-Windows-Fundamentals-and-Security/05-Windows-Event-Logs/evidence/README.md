@@ -1,15 +1,9 @@
 # Filtered Event Evidence
 
-The screenshots below show the filtered Security log events reviewed for this exercise.
+Screenshot files are not included yet. Add the original captures here using these filenames:
 
-## Failed MCB sign-in — Event 4625
+- `failed-login-4625.png` — filtered Security log with the selected failed MCB sign-in and failure reason.
+- `successful-login-4624-overview.png` — filtered Security log showing the successful 4624 event and logon type.
+- `successful-login-4624-details.png` — the 4624 details showing MCB under **New Logon**.
 
-![Filtered Event 4625 for the failed MCB sign-in](failed-login-4625.png)
-
-## Successful MCB sign-in — Event 4624
-
-![Filtered Event 4624 showing the successful logon event](successful-login-4624-overview.png)
-
-![Event 4624 details showing MCB under New Logon](successful-login-4624-details.png)
-
-The screenshots retain the event IDs, times, account context, and logon type used in the analysis. They also show the computer name, so review that before sharing the images elsewhere.
+The screenshots show the computer name. Review that detail before sharing them publicly.

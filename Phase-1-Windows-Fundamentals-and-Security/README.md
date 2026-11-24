@@ -42,4 +42,4 @@ This phase groups Windows fundamentals, command-line practice, and account and p
 
 ## Progress
 
-Modules 1 and 2 notes and evidence are included. Module 3 exercises were completed in a Windows 10 virtual machine with a standard test account. Module 4 documents a five-process sample, as agreed, along with a parent-process example and service observations. Module 5 records a failed MCB logon and a later successful MCB logon that are consistent with the learner's reported sign-in attempt. The Module 5 analysis notes are included; its event screenshots still need to be added to the evidence folder.
+Modules 1 and 2 notes and evidence are included. Module 3 exercises were completed in a Windows 10 virtual machine with a standard test account. Module 4 documents a five-process sample, as agreed, along with a parent-process example and service observations. Module 5 documents the host PC's MCB logon events and includes filtered screenshots. The separate VMware practice account is not shown in those host PC events.

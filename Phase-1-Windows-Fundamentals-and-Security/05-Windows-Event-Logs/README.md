@@ -11,6 +11,6 @@ This folder records a read-only review of the Security log on my personal Window
 
 ## Summary
 
-I found and filtered Security events 4624 and 4625. I examined one failed local interactive logon for MCB and a successful local interactive logon for MCB about seven minutes later. I reported that I was attempting to sign in to MCB around that time. This is consistent with my activity, but the event records alone cannot identify the person at the keyboard.
+I examined a failed interactive logon for the host PC account MCB and a successful interactive logon for that same account about seven minutes later. I reported that I was attempting to sign in to MCB around that time. This is consistent with my activity, but the event records alone cannot identify the person at the keyboard.
 
-The screenshots show the computer name. Review that detail before sharing the images elsewhere. No logs or audit settings were changed.
+The screenshots also include a separate SYSTEM service logon (Logon Type 5), which is background activity and not an MCB sign-in. My VMware practice account is separate and does not appear in these host PC screenshots. No logs or audit settings were changed.

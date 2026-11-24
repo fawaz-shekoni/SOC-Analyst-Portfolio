@@ -15,7 +15,7 @@
 
 ## Interpretation
 
-The selected event records an unsuccessful interactive sign-in attempt for MCB. I was trying to sign in to MCB around this time. A successful 4624 event for MCB appears at 09:36:06 on the same date, seven minutes and twenty seconds later. This sequence is consistent with my sign-in attempts, but the event records alone do not prove who entered the credentials.
+The selected event records an unsuccessful interactive sign-in attempt for MCB on the host PC. I was trying to sign in to MCB around this time. A successful 4624 event for MCB appears at 09:36:06 on the same date, seven minutes and twenty seconds later. This sequence is consistent with my sign-in attempts, but the event records alone do not prove who entered the credentials. The separate VMware practice account is not represented by this MCB event.
 
 I have not examined the other two 4625 events, so I am not assuming they involve MCB or have the same cause.
 
@@ -27,4 +27,8 @@ I have not examined the other two 4625 events, so I am not assuming they involve
 - Check whether repeated failures or unfamiliar remote sources appear.
 - Avoid treating one failed logon as proof of an intrusion.
 
-See the filtered event screenshots in [evidence](evidence/README.md).
+## Evidence
+
+[Evidence index](evidence/README.md)
+
+![Filtered failed MCB logon](evidence/failed-mcb-logon-4625.png)

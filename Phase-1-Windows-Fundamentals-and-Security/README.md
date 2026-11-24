@@ -25,8 +25,21 @@ This phase groups Windows fundamentals, command-line practice, and account and p
 - [NTFS permissions](03-Windows-Users-and-Permissions/NTFS-Permissions.md)
 - [Module 3 evidence](03-Windows-Users-and-Permissions/evidence/)
 
+## Module 4: Windows processes and services
+
+- [Module guide](04-Processes-and-Services/README.md)
+- [Process investigation](04-Processes-and-Services/Process-Investigation.md)
+- [Services investigation](04-Processes-and-Services/Services-Investigation.md)
+- [Module 4 evidence](04-Processes-and-Services/evidence/)
+
+## Module 5: Windows Event Viewer
+
+- [Module guide](05-Windows-Event-Logs/README.md)
+- [Event ID reference](05-Windows-Event-Logs/Event-ID-Reference.md)
+- [Successful login analysis](05-Windows-Event-Logs/Successful-Login-Analysis.md)
+- [Failed login analysis](05-Windows-Event-Logs/Failed-Login-Analysis.md)
+- [Module 5 evidence](05-Windows-Event-Logs/evidence/)
+
 ## Progress
 
-Module 1 and Module 2 notes and evidence are included. Module 3 exercises were completed in a Windows 10 virtual machine with a standard test account. The evidence records initial folder access, a folder-specific Write restriction, the administrator and standard-user outcomes, and the test account's group token.
-
-
+Modules 1 and 2 notes and evidence are included. Module 3 exercises were completed in a Windows 10 virtual machine with a standard test account. Module 4 documents a five-process sample, as agreed, along with a parent-process example and service observations. Module 5 records a failed MCB logon and a later successful MCB logon that are consistent with the learner's reported sign-in attempt. The Module 5 analysis notes are included; its event screenshots still need to be added to the evidence folder.

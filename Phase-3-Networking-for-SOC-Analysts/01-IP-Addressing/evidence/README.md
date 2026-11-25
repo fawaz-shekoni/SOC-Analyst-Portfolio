@@ -1,4 +1,4 @@
-# Day 1 Evidence
+# 01 — IP Addressing Evidence
 
 These screenshots show the commands and results I used for the IP addressing exercise.
 
@@ -7,3 +7,4 @@ These screenshots show the commands and results I used for the IP addressing exe
 - `ping-tests.png` — results for loopback, gateway, and external IP tests.
 
 For privacy, the Wi-Fi device IPv4 value in the first two screenshots was changed to `192.168.0.200`. The report explains this substitution. The ping-results screenshot was not altered.
+

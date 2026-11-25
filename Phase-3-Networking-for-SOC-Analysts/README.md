@@ -11,6 +11,13 @@ I am building on the networking knowledge I gained through Cisco NetAcad Junior 
 
 The IP addressing check used `ipconfig`, `ipconfig /all`, and three ping tests. It showed successful replies to loopback, the local gateway, and `1.1.1.1` at the time of testing. The Wi-Fi device IPv4 value in the published screenshots is changed to `192.168.0.200` for privacy; this is identified as an anonymized display value, not the actual assigned address.
 
+### 02 — Ports and protocols
+
+- [Ports and Protocols Investigation](02-Ports-and-Protocols/02-Ports-and-Protocols.md)
+- [Evidence screenshots](02-Ports-and-Protocols/evidence/README.md)
+
+I reviewed five established TCP connections and mapped their owning process IDs. The snapshot showed Chrome, ChatGPT, and OneDrive connections to remote port 443, plus an `APSDaemon` connection to port 5223 that is consistent with Apple's documented APNs traffic. The local address in the published connection screenshot is anonymized; the report explains the limits of interpreting a single connection snapshot.
+
 ## Planned topics
 
 01. IP addressing and subnetting

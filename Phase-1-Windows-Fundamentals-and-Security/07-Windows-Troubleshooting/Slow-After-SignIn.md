@@ -22,6 +22,18 @@ Practice scenario: investigate a computer that feels slow after sign-in. No cont
 
 The strongest measured pressure in the captured snapshot was memory use: 87–88% of usable RAM, with under 1 GB available. CPU and disk were low at that moment. This can contribute to sluggishness if sustained, but a single reading cannot establish the cause of a sign-in slowdown. The startup list does not show that any enabled app caused the memory pressure; its impact was not measured.
 
+## PowerShell checks to run
+
+Run these in PowerShell immediately after sign-in, then run them again after startup has settled. Compare the process names and values between the two snapshots.
+
+```powershell
+Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 10 ProcessName, WorkingSet64
+
+Get-Process | Sort-Object CPU -Descending | Select-Object -First 5 ProcessName, CPU
+```
+
+WorkingSet64 is the process's current memory working set, reported in bytes. CPU is cumulative processor time in seconds since that process started; it is not a live CPU percentage. Use Task Manager's CPU percentage or repeat process snapshots over a short interval when checking current CPU load. A process using a lot of memory or CPU is a lead to investigate, not proof that it caused the slowdown.
+
 ## Recommended resolution
 
 If the slowdown is repeatable, compare Task Manager immediately after sign-in and again once startup settles. Sort Processes by Memory and CPU, note which entries remain high, and compare Startup apps with the user’s actual needs. Disable an optional startup item only after confirming it is not needed. If memory remains near capacity during normal use, review workload and hardware capacity. No startup setting was changed for this exercise.

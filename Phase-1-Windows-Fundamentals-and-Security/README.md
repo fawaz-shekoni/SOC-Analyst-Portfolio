@@ -40,6 +40,15 @@ This phase groups Windows fundamentals, command-line practice, and account and p
 - [Failed login analysis](05-Windows-Event-Logs/Failed-Login-Analysis.md)
 - [Module 5 evidence](05-Windows-Event-Logs/evidence/)
 
+## Module 6: Windows security fundamentals
+
+- [Module guide](06-Windows-Security-Fundamentals/README.md)
+- [Windows Defender](06-Windows-Security-Fundamentals/Windows-Defender.md)
+- [Windows Firewall](06-Windows-Security-Fundamentals/Windows-Firewall.md)
+- [Windows Update](06-Windows-Security-Fundamentals/Windows-Update.md)
+- [UAC and access control](06-Windows-Security-Fundamentals/UAC-and-Access-Control.md)
+- [Module 6 evidence](06-Windows-Security-Fundamentals/evidence/)
+
 ## Progress
 
-Modules 1 and 2 notes and evidence are included. Module 3 exercises were completed in a Windows 10 virtual machine with a standard test account. Module 4 documents a five-process sample, as agreed, along with a parent-process example and service observations. Module 5 documents the host PC's MCB logon events and includes filtered screenshots. The separate VMware practice account is not shown in those host PC events.
+Modules 1 and 2 notes and evidence are included. Module 3 exercises were completed in a Windows 10 virtual machine with a standard test account. Module 4 documents a five-process sample, a parent-process example, and service observations. Module 5 records host PC logon events. Module 6 records a review of Windows Security, Windows Update, and UAC in the VMware practice machine, with screenshots and notes. The Module 6 Windows Update screenshot shows an installation in progress; completion has not been verified.

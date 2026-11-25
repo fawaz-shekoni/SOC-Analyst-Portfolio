@@ -57,14 +57,6 @@ This phase groups Windows fundamentals, command-line practice, and account and p
 - [Network connectivity](07-Windows-Troubleshooting/Network-Connectivity.md)
 - [Module 7 evidence](07-Windows-Troubleshooting/evidence/)
 
-## Module 8: Windows security investigation
-
-- [Module guide and upload checklist](08-Windows-Security-Investigation/README.md)
-- [Investigation report](08-Windows-Security-Investigation/Investigation-Report.md)
-- [Analysis walkthrough](08-Windows-Security-Investigation/Analysis-Walkthrough.md)
-- [Sample data source and integrity notes](08-Windows-Security-Investigation/Sample-Data-Source.md)
-- [Selected event evidence extract](08-Windows-Security-Investigation/evidence/selected-events.csv)
-
 ## Progress
 
-Modules 1 and 2 notes and evidence are included. Module 3 exercises were completed in a Windows 10 virtual machine with a standard test account. Module 4 documents a five-process sample, a parent-process example, and service observations. Module 5 records host PC logon events. Module 6 records a review of Windows Security, Windows Update, and UAC in the VMware practice machine, with screenshots and notes. The Module 6 Windows Update screenshot shows an installation in progress; completion has not been verified. Module 7 contains three main-PC troubleshooting practice reports with privacy-screened screenshots; the crash example is historical and network connectivity was working at the captured moment. Module 8 uses a clearly identified public CSV sample because the available local log and small EVTX sample did not contain enough failed logons. The report analyzes five failures and related successes, includes a pseudonymized event extract, and identifies practical review screenshots still to be captured by me.
+Modules 1 and 2 notes and evidence are included. Module 3 exercises were completed in a Windows 10 virtual machine with a standard test account. Module 4 documents a five-process sample, a parent-process example, and service observations. Module 5 records host PC logon events. Module 6 records a review of Windows Security, Windows Update, and UAC in the VMware practice machine, with screenshots and notes. The Module 6 Windows Update screenshot shows an installation in progress; completion has not been verified. Module 7 contains three main-PC troubleshooting practice reports with privacy-screened screenshots; the crash example is historical and network connectivity was working at the captured moment.

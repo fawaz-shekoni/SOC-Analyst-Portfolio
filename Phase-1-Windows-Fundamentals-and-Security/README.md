@@ -49,6 +49,14 @@ This phase groups Windows fundamentals, command-line practice, and account and p
 - [UAC and access control](06-Windows-Security-Fundamentals/UAC-and-Access-Control.md)
 - [Module 6 evidence](06-Windows-Security-Fundamentals/evidence/)
 
+## Module 7: Basic Windows troubleshooting
+
+- [Module guide](07-Windows-Troubleshooting/README.md)
+- [Slow after sign-in](07-Windows-Troubleshooting/Slow-After-SignIn.md)
+- [Application crashes](07-Windows-Troubleshooting/Application-Crash.md)
+- [Network connectivity](07-Windows-Troubleshooting/Network-Connectivity.md)
+- [Module 7 evidence](07-Windows-Troubleshooting/evidence/)
+
 ## Progress
 
-Modules 1 and 2 notes and evidence are included. Module 3 exercises were completed in a Windows 10 virtual machine with a standard test account. Module 4 documents a five-process sample, a parent-process example, and service observations. Module 5 records host PC logon events. Module 6 records a review of Windows Security, Windows Update, and UAC in the VMware practice machine, with screenshots and notes. The Module 6 Windows Update screenshot shows an installation in progress; completion has not been verified.
+Modules 1 and 2 notes and evidence are included. Module 3 exercises were completed in a Windows 10 virtual machine with a standard test account. Module 4 documents a five-process sample, a parent-process example, and service observations. Module 5 records host PC logon events. Module 6 records a review of Windows Security, Windows Update, and UAC in the VMware practice machine, with screenshots and notes. The Module 6 Windows Update screenshot shows an installation in progress; completion has not been verified. Module 7 contains three main-PC troubleshooting practice reports with privacy-screened screenshots; the crash example is historical and network connectivity was working at the captured moment.

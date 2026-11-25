@@ -1,4 +1,4 @@
-# Day 1 — IP Addressing Investigation
+# 01 — IP Addressing Investigation
 
 ## Purpose
 
@@ -55,3 +55,4 @@ These pings do not test DNS name resolution, HTTPS access on port 443, browsing 
 - [Ping results screenshot](evidence/ping-tests.png)
 
 The two configuration screenshots show the anonymized Wi-Fi address `192.168.0.200`; the ping screenshot is an unchanged capture of the tests I ran.
+

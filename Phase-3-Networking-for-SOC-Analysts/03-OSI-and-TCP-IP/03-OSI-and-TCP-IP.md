@@ -47,6 +47,15 @@ This shows that Windows resolved the name, selected Wi-Fi and a route through th
 
 The 307 and 301 responses are redirects, not connection failures. The final 200 response shows that the HTTP request completed successfully after following the HTTPS redirects. Since `curl.exe` received the HTTPS response without reporting a TLS validation error, the HTTPS exchange completed for this request.
 
+### What `curl.exe -I -L https://microsoft.com` means
+
+- `curl.exe` runs curl, a command-line program that sends requests to websites and displays their responses.
+- `https://microsoft.com` is the secure website address I requested.
+- `-I` asks curl to request and display the response headers only, rather than downloading the full page. Headers include the status code and can include information such as the content type or redirect destination.
+- `-L` tells curl to follow redirects. A website can respond with a redirect to another address; here, Microsoft redirected the request to its `www` address.
+
+With `-L`, curl continued after the redirects and received `HTTP/1.1 200 OK` from the final destination. `200 OK` means the server successfully answered this headers-only request. The earlier `307` and `301` responses were steps in the redirect chain, not errors. This confirms that this request completed over HTTPS; it does not download or inspect the page itself.
+
 ## Mapping the evidence to the models
 
 | OSI layer | TCP/IP layer | Role in this connection | Evidence / limit |

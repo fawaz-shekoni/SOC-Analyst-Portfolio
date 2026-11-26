@@ -42,9 +42,9 @@ I reviewed the DHCP configuration shown in my earlier `ipconfig /all` evidence a
 ### 06 — Windows Firewall
 
 - [Windows Firewall project](06-Windows-Firewall/06-Windows-Firewall.md)
-- [Practical 1 command evidence](06-Windows-Firewall/evidence/command-results.md)
+- [PowerShell command and evidence transcript](06-Windows-Firewall/evidence/command-results.md)
 
-I restarted this module in order. Practical 1 is documented: all three firewall profiles showed enabled in my check. Practicals 2–5 are still to be completed and explained.
+I checked the three firewall profiles and reviewed examples of enabled inbound and outbound rules. I also worked through a clearly labeled simulated alert. I did not identify a real alert or change firewall settings.
 
 ## Planned topics
 

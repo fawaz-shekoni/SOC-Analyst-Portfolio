@@ -32,6 +32,13 @@ I traced a Microsoft website request from DNS lookup to a successful TCP connect
 
 I queried MX, NS, DMARC, and SPF records for Microsoft domains. The root TXT lookup timed out through my configured resolver but returned records through `1.1.1.1`; I documented this as a resolver-specific observation, not proof of a missing record or a general internet failure.
 
+### 05 — DHCP and ARP
+
+- [DHCP and ARP Investigation](05-DHCP-and-ARP/05-DHCP-and-ARP.md)
+- [Command results transcript](05-DHCP-and-ARP/evidence/command-results.md)
+
+I reviewed the DHCP configuration shown in my earlier `ipconfig /all` evidence and used `arp -a` to inspect the local neighbor cache. The Wi-Fi table showed a dynamic mapping for the default gateway; separate VMware adapter tables were also present.
+
 ## Planned topics
 
 01. IP addressing and subnetting

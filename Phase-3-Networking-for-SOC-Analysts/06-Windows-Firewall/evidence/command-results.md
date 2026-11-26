@@ -43,21 +43,20 @@ My first attempt used `-Profile Public` directly with `Get-NetFirewallRule`, whi
 Command:
 
 ```powershell
-Get-NetFirewallRule -PolicyStore ActiveStore -Direction Inbound -Enabled True |
-    Where-Object {
-        $_.Profile -eq 'Any' -or $_.Profile -match 'Public'
-    } |
-    Group-Object Action |
-    Select-Object Name, Count
+Get-NetFirewallRule -Direction Inbound -Enabled True |
+    Where-Object Profile -match 'Any|Public' |
+    Group-Object Action -NoElement
 ```
+
+I reran the filter with this shorter command. It returned the same counts as my earlier ActiveStore query.
 
 Captured output:
 
 ```text
-Name  Count
-----  -----
-Allow 149
-Block 3
+Count Name
+----- ----
+149   Allow
+3     Block
 ```
 
 ## 4. Review enabled inbound block rules

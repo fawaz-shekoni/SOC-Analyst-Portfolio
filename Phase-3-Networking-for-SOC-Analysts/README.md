@@ -41,9 +41,10 @@ I reviewed the DHCP configuration shown in my earlier `ipconfig /all` evidence a
 
 ### 06 — Windows Firewall
 
-- [Windows Firewall review](06-Windows-Firewall/06-Windows-Firewall.md)
+- [Windows Firewall project](06-Windows-Firewall/06-Windows-Firewall.md)
+- [Practical 1 command evidence](06-Windows-Firewall/evidence/command-results.md)
 
-I checked the active network profile, counted enabled inbound rules, and inspected representative block and allow rules. The report distinguishes configured rules from evidence of actual connection attempts and records that I made no firewall changes.
+I restarted this module in order. Practical 1 is documented: all three firewall profiles showed enabled in my check. Practicals 2–5 are still to be completed and explained.
 
 ## Planned topics
 

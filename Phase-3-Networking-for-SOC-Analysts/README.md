@@ -18,6 +18,13 @@ The IP addressing check used `ipconfig`, `ipconfig /all`, and three ping tests. 
 
 I reviewed five established TCP connections and mapped their owning process IDs. The snapshot showed Chrome, ChatGPT, and OneDrive connections to remote port 443, plus an `APSDaemon` connection to port 5223 that is consistent with Apple's documented APNs traffic. The local address in the published connection screenshot is anonymized; the report explains the limits of interpreting a single connection snapshot.
 
+### 03 — OSI and TCP/IP communication
+
+- [OSI and TCP/IP Communication Investigation](03-OSI-and-TCP-IP/03-OSI-and-TCP-IP.md)
+- [Command evidence transcript](03-OSI-and-TCP-IP/evidence/command-results.md)
+
+I traced a Microsoft website request from DNS lookup to a successful TCP connection on port 443, then followed its HTTP-to-HTTPS redirects to a final `200 OK`. The report maps each observation to the OSI and TCP/IP models and explains what the commands did not verify.
+
 ## Planned topics
 
 01. IP addressing and subnetting

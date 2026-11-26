@@ -18,6 +18,8 @@ The first attempt to use `-Profile` directly with `Get-NetFirewallRule` returned
 
 ## Evidence
 
+[PowerShell commands and captured results](evidence/command-results.md) show the commands I ran and the matching output transcripts.
+
 ### Firewall profiles and active connection
 
 - Domain, Private, and Public profiles each showed `Enabled: True`.
@@ -76,4 +78,4 @@ I left the firewall configuration unchanged. If I needed to assess these rules f
 
 ## Evidence source and limitations
 
-This report is based on the PowerShell outputs shown during my investigation. I transcribed the relevant values into this document; the screenshot files were not included as repository attachments in this submission. The observations are a point-in-time snapshot of this computer's configuration.
+The linked evidence transcript records the PowerShell commands and output values shown in the screenshots I shared during this investigation. The screenshot image files themselves are not attached in the repository. The observations are a point-in-time snapshot of this computer's configuration.

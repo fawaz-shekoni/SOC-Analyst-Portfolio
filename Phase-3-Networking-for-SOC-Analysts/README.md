@@ -46,6 +46,13 @@ I reviewed the DHCP configuration shown in my earlier `ipconfig /all` evidence a
 
 I checked the three firewall profiles and reviewed examples of enabled inbound and outbound rules. I also worked through a clearly labeled simulated alert. I did not identify a real alert or change firewall settings.
 
+### Week 1 review — Mini-investigation
+
+- [Network alert and Facebook connectivity mini-report](Week-1-Review-Mini-Investigation/Week-1-Mini-Investigation.md)
+- [Command evidence transcript](Week-1-Review-Mini-Investigation/evidence/command-results.md)
+
+I used real, point-in-time network checks to investigate a clearly labeled simulated alert. DNS resolution and TCP connectivity to Facebook on port 443 succeeded during testing. The alert did not provide an exact external IP, so I could not correlate it to a specific connection or determine whether it was suspicious.
+
 ## Planned topics
 
 07. Network traffic and Wireshark

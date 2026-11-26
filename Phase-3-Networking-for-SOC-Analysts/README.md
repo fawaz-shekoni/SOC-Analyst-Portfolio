@@ -25,6 +25,13 @@ I reviewed five established TCP connections and mapped their owning process IDs.
 
 I traced a Microsoft website request from DNS lookup to a successful TCP connection on port 443, then followed its HTTP-to-HTTPS redirects to a final `200 OK`. The report maps each observation to the OSI and TCP/IP models and explains what the commands did not verify.
 
+### 04 — DNS investigation
+
+- [DNS Investigation](04-DNS-Investigation/04-DNS-Investigation.md)
+- [Command results transcript](04-DNS-Investigation/evidence/command-results.md)
+
+I queried MX, NS, DMARC, and SPF records for Microsoft domains. The root TXT lookup timed out through my configured resolver but returned records through `1.1.1.1`; I documented this as a resolver-specific observation, not proof of a missing record or a general internet failure.
+
 ## Planned topics
 
 01. IP addressing and subnetting

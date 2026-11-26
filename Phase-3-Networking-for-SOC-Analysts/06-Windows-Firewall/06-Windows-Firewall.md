@@ -1,81 +1,63 @@
-# 06 — Windows Firewall review
+# 06 — Windows Firewall
 
-## Purpose
+## Project status
 
-I reviewed the Windows Firewall configuration on my main Windows PC using read-only PowerShell commands. I wanted to understand which firewall profile was active and what the inbound rules showed. I did not change firewall settings.
+I am restarting this module with the practicals in order so I can explain the evidence myself. I am keeping the work read-only; I will not randomly disable firewall rules or turn off the firewall.
 
-This is a configuration review, not proof that a remote connection was attempted or that an application was listening.
+- **Practical 1 — Check firewall status:** complete
+- **Practical 2 — Inspect firewall rules:** not documented in this restart yet
+- **Practical 3 — Find enabled inbound rules:** not documented in this restart yet
+- **Practical 4 — Find enabled outbound rules:** not documented in this restart yet
+- **Practical 5 — Investigate a simulated firewall alert:** not documented in this restart yet
 
-## Investigation steps
+## Firewall fundamentals
 
-1. I checked the Domain, Private, and Public firewall profile settings with `Get-NetFirewallProfile`.
-2. I checked the active connection with `Get-NetConnectionProfile`.
-3. I counted enabled inbound rules applying to the Public profile or to all profiles.
-4. I reviewed the enabled inbound block rules and inspected their program, protocol, port, address, and service filters.
-5. I sampled enabled inbound allow rules and inspected two Wi-Fi Direct rules that applied to the Public profile.
+A firewall checks network traffic against rules.
 
-The first attempt to use `-Profile` directly with `Get-NetFirewallRule` returned a parameter error. I corrected the query by retrieving the active rules and filtering their `Profile` property with `Where-Object`.
+- **Inbound traffic** is traffic trying to reach my computer.
+- **Outbound traffic** is traffic leaving my computer.
+- An **Allow** rule permits traffic that matches its conditions.
+- A **Block** rule stops traffic that matches its conditions.
+- A rule can apply to a program or service, protocol, port, address, direction, and network profile.
+- A rule describes what the firewall should do if traffic matches. The rule alone does not prove that traffic occurred.
 
-## Evidence
+Windows has three firewall profiles:
 
-[PowerShell commands and captured results](evidence/command-results.md) show the commands I ran and the matching output transcripts.
+- **Domain** is for a computer connected to a managed organization network.
+- **Private** is for a network I have identified as trusted, such as my home network.
+- **Public** is for a network treated as untrusted, such as public Wi-Fi.
 
-### Firewall profiles and active connection
+The profile tells Windows which set of rules applies to the current network category. A Public profile does not by itself prove that the computer is reachable from the internet.
 
-- Domain, Private, and Public profiles each showed `Enabled: True`.
-- `DefaultInboundAction` and `DefaultOutboundAction` showed `NotConfigured` for all three profiles. This output did not establish the effective default actions, so I did not infer them.
-- The active connection was the `Wi-Fi` interface, with `NetworkCategory: Public` and `IPv4Connectivity: Internet`.
+## Practical 1 — Check firewall status
 
-### Inbound rule counts
+I ran `Get-NetFirewallProfile` in PowerShell. I also used a selected view to compare the profile status and default action fields.
 
-For enabled inbound rules whose profile was Public or Any, the query returned:
+- [Practical 1 command and captured output](evidence/command-results.md)
 
-| Action | Count |
-| --- | ---: |
-| Allow | 149 |
-| Block | 3 |
+### My result
 
-These are counts of configured rules, not connection attempts or active network sessions.
-
-### Inbound block rules
-
-The three block entries were:
-
-- Two `VLC media player` rules, both enabled and scoped to the Public profile.
-- One `codex_sandbox_offline_block_inbound` rule, enabled and scoped to Any.
-
-The two VLC rules came from the local persistent policy store. Their filters identified:
-
-- Program: `C:\Program Files\VideoLAN\VLC\vlc.exe`
-- Direction and action: inbound block
-- Protocols: one TCP rule and one UDP rule
-- Local and remote ports: Any
-
-The Codex-named rule appeared in the active policy output. Its name suggests an environment-specific rule, but I did not independently verify its origin. I recorded it as a separate observation rather than treating it as suspicious evidence.
-
-### Inbound allow rules
-
-The sample included Windows networking rules for features such as DHCP, ICMP, Delivery Optimization, media services, and Wi-Fi Direct. Two enabled rules were explicitly scoped to the Public profile:
-
-| Rule | Program | Service | Protocol / ports / remote address |
+| Profile | Enabled | Default inbound action | Default outbound action |
 | --- | --- | --- | --- |
-| Wi-Fi Direct Spooler Use (In) | `C:\Windows\System32\spoolsv.exe` | `Spooler` | Any / Any / Any |
-| Wi-Fi Direct Scan Service Use (In) | `C:\Windows\System32\svchost.exe` | `stisvc` | Any / Any / Any |
+| Domain | True | NotConfigured | NotConfigured |
+| Private | True | NotConfigured | NotConfigured |
+| Public | True | NotConfigured | NotConfigured |
 
-The service filter ties each rule to a named Windows service. Microsoft identifies `stisvc` as the Windows Image Acquisition service used for scanners and cameras.
+### What I understand from the result
 
-## Findings
+All three firewall profiles showed as enabled at the time of the check. The default action fields showed `NotConfigured`; I do not interpret that as the firewall being off or guess what the effective defaults are from this output alone.
 
-The firewall profiles were enabled, and the active Wi-Fi connection was categorized as Public. The reviewed configuration included two Public-profile inbound allow rules for Wi-Fi Direct printing and scanning, along with separate Public-profile inbound block rules for VLC over TCP and UDP.
+This command checks firewall profile configuration. It does not show that a connection was attempted, what traffic was blocked, or whether an attack happened. I made no firewall changes.
 
-The Wi-Fi Direct rule filters showed Any for protocol/ports/address, but the rules were also tied to specific programs and services. I did not inspect every other possible rule condition, check whether these services were running, confirm whether a matching socket was listening, or review firewall traffic logs. Therefore, this evidence does not establish that the computer was reachable through those rules or that any inbound traffic occurred.
+## Remaining practicals
 
-The rule names and paths are consistent with Windows printing and imaging features, but that alone does not prove the rules are required or appropriate for every Public network.
+I will add each section after I complete and understand it:
 
-## Recommended resolution
+1. Inspect a sample of firewall rules.
+2. Review enabled inbound rules.
+3. Review enabled outbound rules.
+4. Work through a clearly labeled simulated alert by identifying the port, application or service, matching rule, direction, and profile. I will not present the simulated alert as a real event from my computer.
 
-I left the firewall configuration unchanged. If I needed to assess these rules further, I would confirm whether I use Wi-Fi Direct printing or scanning, inspect the remaining rule conditions and service state, and review firewall or endpoint logs for matching traffic. I would ask an administrator to narrow or disable a rule only if its purpose is not needed and the change is approved. I would not treat rule counts or broad filter fields alone as evidence of an attack.
+## Evidence note
 
-## Evidence source and limitations
-
-The linked evidence transcript records the PowerShell commands and output values shown in the screenshots I shared during this investigation. The screenshot image files themselves are not attached in the repository. The observations are a point-in-time snapshot of this computer's configuration.
+The linked transcript records the command and values shown in my PowerShell screenshots. The screenshot image files themselves are not attached to this repository version.

@@ -39,14 +39,14 @@ I queried MX, NS, DMARC, and SPF records for Microsoft domains. The root TXT loo
 
 I reviewed the DHCP configuration shown in my earlier `ipconfig /all` evidence and used `arp -a` to inspect the local neighbor cache. The Wi-Fi table showed a dynamic mapping for the default gateway; separate VMware adapter tables were also present.
 
+### 06 — Windows Firewall
+
+- [Windows Firewall review](06-Windows-Firewall/06-Windows-Firewall.md)
+
+I checked the active network profile, counted enabled inbound rules, and inspected representative block and allow rules. The report distinguishes configured rules from evidence of actual connection attempts and records that I made no firewall changes.
+
 ## Planned topics
 
-01. IP addressing and subnetting
-02. Ports and protocols
-03. OSI and TCP/IP communication
-04. DNS investigation
-05. DHCP and ARP
-06. Windows Firewall
 07. Network traffic and Wireshark
 08. TCP analysis
 09. DNS packet analysis
@@ -54,4 +54,3 @@ I reviewed the DHCP configuration shown in my earlier `ipconfig /all` evidence a
 11. Suspicious traffic investigation
 
 I will add each investigation after completing the practical work and reviewing what the evidence means. Training captures and simulated scenarios will be labeled as such.
-
